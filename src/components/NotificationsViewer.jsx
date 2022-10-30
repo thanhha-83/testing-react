@@ -1,7 +1,7 @@
 import React from 'react';
-import NotificationService from '../services/NotificationService'
+import NotificationsService from '../services/NotificationsService'
 
-export default class extends React.Component {
+export default class NotificationsViewer extends React.Component {
   constructor(...args) {
     super(...args);
     this.state = {
@@ -10,7 +10,7 @@ export default class extends React.Component {
   }
 
   async componentDidMount() {
-    let count = await NotificationService.GetNotifications();
+    let {count} = await NotificationsService.getNotifications();
     this.setState({
       count
     });
